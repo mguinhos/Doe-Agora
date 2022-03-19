@@ -1,6 +1,8 @@
 # Doe-Agora!
 ### O projeto de um aplicativo de doações, inspirado por aplicativos como ifood e BomNegocio
 
+![Screenshot](screenshot.png)
+
 ## Objetivos
 * Criar uma ponte entre instituições e pessoas, como igrejas, orfanatos, ONGs e etc.
 * Garantir a segurança do doador e do beneficiado
