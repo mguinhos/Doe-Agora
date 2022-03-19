@@ -1,0 +1,49 @@
+#:kivy 1.0
+
+<Navegacao@MDScreen>:
+    name: "navegacao"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDLabel:
+            text: "Instituições"
+            size_hint_y: 0.125
+            halign: "center"
+        
+        MDSwiper:
+            items_spacing: 16
+
+            MySwipeCard
+            MySwipeCard
+            MySwipeCard
+            MySwipeCard
+        
+        MDToolbar:
+            title: "Navegacao"
+
+<MySwipeCard@MDSwiperItem>:
+    MDCard:
+        orientation: "vertical"
+        ripple_behavior: True
+
+        MDBoxLayout:
+            orientation: "vertical"
+
+            FitImage:
+                source: "res/banner.webp"
+            
+            MDLabel:
+                size_hint_y: 0.25
+                halign: "center"
+                text: "Nome da instituição"
+
+        MDSeparator
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: 8
+
+            MDLabel:
+                halign: "center"
+                text: "Descrição bem longa..."

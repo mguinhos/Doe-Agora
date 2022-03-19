@@ -1,0 +1,25 @@
+#:kivy 1.0
+
+<Recuperacao@MDScreen>:
+    name: "recuperacao"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDToolbar:
+            title: "Recuperação"
+            left_action_items: [["arrow-left", lambda _: app.leave_screen() ]]
+        
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: 24
+
+            MDTextField:
+                hint_text: "(DDD) 1234-56789"
+                mode: "fill"
+            
+            MDFlatButton:
+                size_hint_x: 1
+                text: "Enviar!"
+            
+        MDBoxLayout:

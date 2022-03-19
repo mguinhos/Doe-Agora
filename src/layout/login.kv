@@ -1,0 +1,64 @@
+#:kivy 1.0
+
+<Login@MDScreen>:
+    name: "login"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: 16
+
+        MDLabel:
+            text: "Doe-Agora!"
+            halign: "center"
+            font_style: "H4"
+            size_hint_y: 0.25
+
+        MDBoxLayout:
+            orientation: "vertical"
+            spacing: 16
+        
+            MDTextField:
+                hint_text: "E-mail ou Número de telefone"
+                helper_text: "Este campo é necessario!"
+                helper_text_mode: "on_error"
+                mode: "fill"
+                required: True
+
+                on_text: app.check_email_or_number(self)
+            
+            MDTextField:
+                id: password_textfield
+                hint_text: "Senha"
+                helper_text: "Este campo é necessario!"
+                helper_text_mode: "on_error"
+                mode: "fill"
+                password: True
+                required: True
+            
+            MDIconButton:
+                icon: "eye-off"
+                
+                on_release:
+                    self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                    password_textfield.password = not password_textfield.password
+                
+            MDTextButton:
+                text: "Esqueceu a senha?"
+
+                on_press: app.enter_screen("recuperacao")
+        
+        MDBoxLayout:
+            orientation: "vertical"
+            spacing: 8
+
+            MDRaisedButton:
+                text: "Fazer Login"
+                size_hint_x: 1
+
+                on_press: app.enter_screen("navegacao")
+            
+            MDRaisedButton:
+                text: "Cadastrar-se"
+                size_hint_x: 1
+
+                on_press: app.enter_screen("cadastro")
